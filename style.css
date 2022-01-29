@@ -1,0 +1,139 @@
+body {
+  margin: 0%;
+  font-size: 50px;
+  color: aliceblue;
+}
+
+.wrapper {
+  background: purple;
+  min-height: 80vh;
+  padding: 16px;
+
+  /* grid system =========== */
+  display: grid;
+  gap: 10px;
+
+  /* gap: 5px 40px 10px 2px;
+  /* grid-template-columns: 20% 2fr minmax(1201px, 20%) 50px; */
+  /* grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 20% 100px 1fr;
+  grid-template-rows: auto; */
+
+  grid-template-areas:
+    "item8 item2 item7"
+    "item5 item5 item6"
+    "item3 item1 item6"
+    "item4 item4 item9";
+}
+
+.wrapper > div {
+  background: olivedrab;
+  /* width: 60px;
+  height: 60px; */
+
+  /* next 3 lines to display the content within the grid to center */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-1 {
+  grid-area: item1;
+}
+.item-2 {
+  /* grid-row: 2/3;
+  grid-column-start: 1;
+  grid-column-end: 4; */
+  /* grid-column: 3/3;*/
+  grid-area: item2;
+}
+.item-3 {
+  grid-area: item3;
+}
+.item-4 {
+  grid-area: item4;
+}
+.item-5 {
+  grid-area: item5;
+}
+.item-6 {
+  grid-area: item6;
+}
+.item-7 {
+  grid-area: item7;
+}
+.item-8 {
+  grid-area: item8;
+}
+.item-9 {
+  grid-area: item9;
+}
+
+.circle {
+  /* width: 150%;not percentage, but pixel else it won't display */
+  /* height: 150%; not percentage, but pixel else it won't display */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgb(136, 184, 48);
+  margin: auto;
+  margin-top: 50px;
+  /* display: none; if this is uncommented, then the circle won't show up
+  if the screen is expanded */
+  display: none;
+}
+
+/* ==========================media query=============================  */
+
+/* ====screen size mobile < 768px, maximum with up to 768px==== */
+
+@media (max-width: 768px) {
+  .wrapper {
+    /* grid system =========== */
+    display: grid;
+    gap: 10px;
+
+    /* gap: 5px 40px 10px 2px;
+        /* grid-template-columns: 20% 2fr minmax(1201px, 20%) 50px; */
+    /* grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 20% 100px 1fr;
+        grid-template-rows: auto; */
+
+    grid-template-areas:
+      "item1 item1"
+      "item2 item3"
+      "item4 item4"
+      "item5 item6"
+      "item7 item7"
+      "item8 item9";
+  }
+
+  .circle {
+    display: block;
+  }
+}
+
+/*====== screen size mobile < 576px, maximum with up to 576px===== */
+
+@media (max-width: 576px) {
+  .wrapper {
+    /* grid system =========== */
+    display: grid;
+    gap: 10px;
+
+    grid-template-areas:
+      "item1"
+      "item2"
+      "item3"
+      "item4"
+      "item5"
+      "item6"
+      "item7"
+      "item8"
+      "item9";
+  }
+
+  .circle {
+    display: none;
+  }
+}
